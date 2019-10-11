@@ -1,0 +1,18 @@
+* {
+    box-sizing: ;
+}
+
+section{
+    width: 1000px;
+    height: 600px;
+    border: 1px #000000 solid;
+    position: relative;
+}
+
+.duck{
+    position: absolute;
+    display: inline-block;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+}
