@@ -37,10 +37,11 @@ main{
     display: flex;
     padding: 1rem;
     font-weight: bold;
+    justify-content: space-between;
 }
 
 #roundAndShot{
-    width: 20%;
+    width: 15%;
     height: 100%;
     background-color: purple;
     display: flex;
@@ -53,13 +54,29 @@ main{
     color: #a2ff00;
     width: max-content;
     margin-bottom: 1rem;
+    padding: .1rem;
 }
 
 #shot{
     background-color: black;
-    border: 1px #a2ff00 solid;
+    border: 2px #a2ff00 solid;
     color: cornflowerblue;
     width: max-content;
+    font-family: duckhunt.ttf;
+}
+
+#hit{
+    width: 50%;
+    color: #a2ff00;
+    background-color: black;
+    border: 2px #a2ff00 solid;
+}
+
+#score{
+    width: 25%;
+    background-color: black;
+    color: white;
+    border: 2px #a2ff00 solid;
 }
 
 .flash{

@@ -29,20 +29,36 @@ var shotElement = document.createElement("div");
 roundShotContainer.appendChild(shotElement);
 shotElement.id = "shot";
 
+var hitElement = document.createElement("div");
+infoBarContainer.appendChild(hitElement);
+hitElement.id = "hit";
 
-roundElement.innerHTML = "R = 0";
+var scoreElement = document.createElement("div");
+infoBarContainer.appendChild(scoreElement);
+scoreElement.id = "score";
+var score = 000000;
+scoreElement.innerHTML = score + " SCORE";
+
+
+
+
+roundElement.innerHTML = "R=0";
 shotElement.innerHTML = "SHOT";
+hitElement.innerHTML = "HIT";
 
-
-
-function fire(){
-    var flashEvent = document.createElement("div");
-    flashEvent.className = "flash";
-    firstPlanElement.appendChild(flashEvent);
-    setTimeout(function(){
-        flashEvent.remove();
-    }, 100)
+function scorePoint(){
+    score += 100;
+    scoreElement.innerHTML = score + " SCORE";
 }
+
+// function fire(){
+//     var flashEvent = document.createElement("div");
+//     flashEvent.className = "flash";
+//     firstPlanElement.appendChild(flashEvent);
+//     setTimeout(function(){
+//         flashEvent.remove();
+//     }, 100)
+// }
 
 function createDuck(){
     var duckElement = document.createElement("div");
@@ -60,6 +76,7 @@ function setRandomPosition(duck) {
 function ducksKill() {
     this.remove();
     createDuck();
+    scorePoint();
 };
 
 for (let i = 0; i < 15; i++) {
@@ -76,7 +93,7 @@ function ducksMove() {
 
 }
 
-screenElement.addEventListener("click", fire);
+// screenElement.addEventListener("click", fire);
 
 setInterval(ducksMove, 2000);
 
