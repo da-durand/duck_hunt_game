@@ -1,18 +1,78 @@
-* {
-    box-sizing: ;
+main{
+    width: 1280px;
+    height: 720px;
+    margin: auto;
+
 }
 
-section{
-    width: 1000px;
-    height: 600px;
+#screen{
+    width: 100%;
+    height: 100%;
     border: 1px #000000 solid;
     position: relative;
+    cursor: url(pictures/pointer.png), auto;
+    background-color: #009fff;
+}
+
+#firstPlan{
+    background-image: url(pictures/background_game.png);
+    background-attachment: inherit;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+}
+
+.info{
+    width: 100%;
+    align-self: flex-end;
+}
+
+.container{
+    width: 80%;
+    background-color: red;
+    margin: auto;
+    display: flex;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+#roundAndShot{
+    width: 20%;
+    height: 100%;
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#round{
+    background-color: black;
+    color: #a2ff00;
+    width: max-content;
+    margin-bottom: 1rem;
+}
+
+#shot{
+    background-color: black;
+    border: 1px #a2ff00 solid;
+    color: cornflowerblue;
+    width: max-content;
+}
+
+.flash{
+    width: 1280px;
+    height: 720px;
+    background-color: white;
 }
 
 .duck{
     position: absolute;
     display: inline-block;
-    background-color: black;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    background-image: url(pictures/duck.png);
+    background-size: cover;
 }

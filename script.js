@@ -1,6 +1,48 @@
-var screenElement = document.createElement("section");
-document.body.appendChild(screenElement);
+var mainElement = document.createElement("main");
+document.body.appendChild(mainElement);
 
+var screenElement = document.createElement("section");
+mainElement.appendChild(screenElement);
+screenElement.id = "screen";
+
+var firstPlanElement = document.createElement("div");
+screenElement.appendChild(firstPlanElement);
+firstPlanElement.id = "firstPlan";
+
+var infoBarElement = document.createElement("div");
+infoBarElement.className = "info";
+firstPlanElement.appendChild(infoBarElement);
+
+var infoBarContainer = document.createElement("div");
+infoBarContainer.className = "container";
+infoBarElement.appendChild(infoBarContainer);
+
+var roundShotContainer = document.createElement("div");
+infoBarContainer.appendChild(roundShotContainer);
+roundShotContainer.id = "roundAndShot";
+
+var roundElement = document.createElement("div");
+roundShotContainer.appendChild(roundElement);
+roundElement.id = "round";
+
+var shotElement = document.createElement("div");
+roundShotContainer.appendChild(shotElement);
+shotElement.id = "shot";
+
+
+roundElement.innerHTML = "R = 0";
+shotElement.innerHTML = "SHOT";
+
+
+
+function fire(){
+    var flashEvent = document.createElement("div");
+    flashEvent.className = "flash";
+    firstPlanElement.appendChild(flashEvent);
+    setTimeout(function(){
+        flashEvent.remove();
+    }, 100)
+}
 
 function createDuck(){
     var duckElement = document.createElement("div");
@@ -11,8 +53,8 @@ function createDuck(){
 }
 
 function setRandomPosition(duck) {
-    duck.style.left = Math.floor(Math.random() * 960) + "px";
-    duck.style.top = Math.floor(Math.random() * 560) + "px";
+    duck.style.left = Math.floor(Math.random() * 1230) + "px";
+    duck.style.top = Math.floor(Math.random() * 490) + "px";
 }
 
 function ducksKill() {
@@ -34,4 +76,7 @@ function ducksMove() {
 
 }
 
+screenElement.addEventListener("click", fire);
+
 setInterval(ducksMove, 2000);
+
